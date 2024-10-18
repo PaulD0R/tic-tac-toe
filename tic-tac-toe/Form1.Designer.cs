@@ -162,6 +162,7 @@
             this.restartButton.TabIndex = 11;
             this.restartButton.Text = "Играть заново";
             this.restartButton.UseVisualStyleBackColor = true;
+            this.restartButton.Click += new System.EventHandler(this.restartButton_Click);
             // 
             // playerLabel
             // 
