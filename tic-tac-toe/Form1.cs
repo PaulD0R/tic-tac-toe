@@ -22,6 +22,8 @@ namespace tic_tac_toe
         {
             CheckCorrect(sender);
             GameRules(sender);
+            CheckWin();
+            CheckDraw();
             
         }
         private void CheckCorrect(object sender)
@@ -98,6 +100,14 @@ namespace tic_tac_toe
             playerLabel.ForeColor = Color.SkyBlue;
 
             countMoves = 0;
+        }
+        private void CheckDraw()
+        {
+            if (countMoves == 9)
+            {
+                playerLabel.Text = "Ничья";
+                playerLabel.ForeColor = Color.Gray;
+            }
         }
 
     }
