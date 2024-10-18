@@ -20,6 +20,11 @@ namespace tic_tac_toe
 
         private void ClickCell(object sender, EventArgs e)
         {
+            CheckCorrect(sender);
+        }
+        private void CheckCorrect(object sender)
+        {
+            sender.GetType().GetProperty("Enabled").SetValue(sender, false);
         }
 
     }
