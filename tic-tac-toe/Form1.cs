@@ -21,10 +21,29 @@ namespace tic_tac_toe
         private void ClickCell(object sender, EventArgs e)
         {
             CheckCorrect(sender);
+            GameRules(sender);
+            countMoves++;
+            
         }
         private void CheckCorrect(object sender)
         {
             sender.GetType().GetProperty("Enabled").SetValue(sender, false);
+        }
+
+        private void GameRules(object sender)
+        {
+            if (countMoves % 2 == 0)
+            {
+                sender.GetType().GetProperty("Text").SetValue(sender, "x");
+                playerLabel.Text = "Игрок 2";
+                playerLabel.ForeColor = Color.IndianRed;
+            }
+            else
+            {
+                sender.GetType().GetProperty("Text").SetValue(sender, "o");
+                playerLabel.Text = "Игрок 1";
+                playerLabel.ForeColor = Color.SkyBlue;
+            }
         }
 
     }
