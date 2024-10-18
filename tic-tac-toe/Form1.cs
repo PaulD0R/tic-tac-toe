@@ -22,7 +22,6 @@ namespace tic_tac_toe
         {
             CheckCorrect(sender);
             GameRules(sender);
-            countMoves++;
             
         }
         private void CheckCorrect(object sender)
@@ -44,6 +43,34 @@ namespace tic_tac_toe
                 playerLabel.Text = "Игрок 1";
                 playerLabel.ForeColor = Color.SkyBlue;
             }
+        }
+        private void CheckWin()
+        {
+            if (button11.Text == button12.Text && button12.Text == button13.Text && button11.Text != "") Win();
+            else if (button21.Text == button22.Text && button22.Text == button23.Text && button21.Text != "") Win();
+            else if (button31.Text == button32.Text && button32.Text == button33.Text && button31.Text != "") Win();
+            else if (button11.Text == button22.Text && button22.Text == button33.Text && button11.Text != "") Win();
+            else if (button13.Text == button22.Text && button22.Text == button31.Text && button13.Text != "") Win();
+            else if (button11.Text == button21.Text && button21.Text == button31.Text && button11.Text != "") Win();
+            else if (button12.Text == button22.Text && button22.Text == button32.Text && button12.Text != "") Win();
+            else if (button13.Text == button23.Text && button23.Text == button33.Text && button13.Text != "") Win();
+            else countMoves++;
+        }
+
+        private void Win()
+        {
+            playerLabel.ForeColor = Color.LightGreen;
+            if (countMoves % 2 == 1) playerLabel.Text = "Победил игрок 2";
+            else playerLabel.Text = "Победил игрок 1";
+            button11.Enabled = false;
+            button12.Enabled = false;
+            button13.Enabled = false;
+            button21.Enabled = false;
+            button22.Enabled = false;
+            button23.Enabled = false;
+            button31.Enabled = false;
+            button32.Enabled = false;
+            button33.Enabled = false;
         }
 
     }
