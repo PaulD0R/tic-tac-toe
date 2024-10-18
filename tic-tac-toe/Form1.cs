@@ -72,6 +72,33 @@ namespace tic_tac_toe
             button32.Enabled = false;
             button33.Enabled = false;
         }
+        private void restartButton_Click(object sender, EventArgs e)
+        {
+            button11.Enabled = true;
+            button12.Enabled = true;
+            button13.Enabled = true;
+            button21.Enabled = true;
+            button22.Enabled = true;
+            button23.Enabled = true;
+            button31.Enabled = true;
+            button32.Enabled = true;
+            button33.Enabled = true;
+
+            button11.Text = "";
+            button12.Text = "";
+            button13.Text = "";
+            button21.Text = "";
+            button22.Text = "";
+            button23.Text = "";
+            button31.Text = "";
+            button32.Text = "";
+            button33.Text = "";
+
+            playerLabel.Text = "Игрок 1";
+            playerLabel.ForeColor = Color.SkyBlue;
+
+            countMoves = 0;
+        }
 
     }
 }
